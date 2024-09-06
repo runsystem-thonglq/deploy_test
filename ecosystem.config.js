@@ -1,21 +1,21 @@
 module.exports = {
   apps: [
     {
-      script: "npm start",
+      script: "npm run dev",
     },
   ],
 
   deploy: {
     production: {
-      key: "key.pem",
-      user: "ubuntu",
-      host: "SSH_HOSTMACHINE",
+      // key: "key.pem",
+      // user: "ubuntu",
+      host: "localhost",
       ref: "origin/main",
-      repo: "GIT_REPOSITORY",
-      path: "/home/ubuntu",
+      repo: "https://github.com/runsystem-thonglq/deploy_test",
+      path: "C:/Users/thonglq/SERVE",
       "pre-deploy-local": "",
       "post-deploy":
-        "source ~/.nvm/nvm.sh && npm install && npm run build && pm2 reload ecosystem.config.js --env production",
+        "npm install && npm run build && pm2 reload ecosystem.config.js --env production",
       "pre-setup": "",
       ssh_options: "ForwardAgent=yes",
     },
