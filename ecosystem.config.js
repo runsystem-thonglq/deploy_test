@@ -1,7 +1,9 @@
 module.exports = {
   apps: [
     {
-      script: "npm run dev",
+      name: "my-app", // Add a name for the app
+      script: "npm",
+      args: "run dev", // Use start instead of dev for production
     },
   ],
 
@@ -15,7 +17,7 @@ module.exports = {
       path: "C:/Users/thonglq/SERVE",
       "pre-deploy-local": "",
       "post-deploy":
-        "npm install && npm run build && pm2 reload ecosystem.config.js --env production",
+        "npm install && npm run build && pm2 reload ecosystem.config.js ",
       "pre-setup": "",
       ssh_options: "ForwardAgent=yes",
     },
